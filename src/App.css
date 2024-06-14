@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    transition: all 0.2s linear;
+  }
+  html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    /* font-family: "Noto Nastaliq Urdu", serif; */
+  }
+
+  input::-ms-reveal,
+  input::-ms-clear {
+    display: none;
+  }
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply px-2 mx-auto max-w-8xl xl:px-0;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-center-x {
+    @apply flex justify-center;
+  }
+  .flex-center-y {
+    @apply flex items-center;
+  }
+  .absolute-center {
+    @apply absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2;
+  }
+  .absolute-center-x {
+    @apply absolute -translate-x-1/2 left-1/2;
+  }
+  .absolute-center-y {
+    @apply absolute -translate-y-1/2 top-1/2;
+  }
+
+  .image-container {
+    @apply relative;
+  }
+  .image-container span {
+    position: unset !important;
+    @apply !h-full;
+  }
+
+  .image-container .image {
+    @apply !relative !h-full !w-full object-cover;
+  }
+
+  /* table */
+  table tr:last-child th:first-child {
+    @apply rounded-tl-lg;
+  }
+
+  table tr:last-child th:last-child {
+    @apply rounded-tr-lg;
+  }
+
+  .table th {
+    @apply p-3 text-white bg-sky-600;
+  }
+
+  table td {
+    @apply p-3 text-sm border-y-2 lg:border-b-0 border-y-black whitespace-nowrap;
+  }
+}
